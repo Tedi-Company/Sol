@@ -1,1 +1,2 @@
 *.solscript linguist-language=Sol
+*.solscript linguist-detectable=true
