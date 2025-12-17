@@ -13,3 +13,6 @@ The Sol language
 * logo terá como executar comandos do sistema e de outras linguagens diretamente.
 * usa a extenção de arquivo .solscript.
 * usa a linguagem lua para executar arquivos depois de traduzidos.
+
+
+Você precisa ter o lua instalado. Baixe de https://github.com/rjpcomputing/luaforwindows/releases/tag/v5.1.5-52 estraia e cole na pasta lua, vá na pasta files e copie lua 5.1.exe e lua 5.1.dll. Cole na pasta lua e pronto. Por enquanto o transpilador que ainda não foi transformado em executavel só funciona para windows e está em desenvolvimento ativo
