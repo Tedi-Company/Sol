@@ -1,0 +1,2 @@
+-- Gerado automaticamente pelo Sol
+-- comando desconhecido: mostrar #oi#

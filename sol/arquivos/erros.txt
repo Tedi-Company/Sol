@@ -1,0 +1,3 @@
+erros.
+
+1. corrigir comando de criar no solscript
