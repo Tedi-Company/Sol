@@ -23,7 +23,9 @@ Para ultilizar o sol você precisa ter o lua para windows instalado.
 
 1. Instale o lua para Windows de https://github.com/rjpcomputing/luaforwindows/releases/tag/v5.1.5-52 e selecione o source code.zip
 2. Extraia o arquivo
-3. Na pasta file copie o lua 5.1.exe e lua 5.1.dll
+3. Na pasta file copie
+* lua 5.1.exe
+* lua 5.1.dll
 4. Cole na pasta lua os dois arquivos
 
 E agora o sol pode executar scripts tanto no modo terminal tando no modo solscript
