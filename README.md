@@ -19,5 +19,11 @@ Ela foi criada pensando em novos programadores que não sabem falar muito de ing
 
 # Dependência: Lua
 
+Para ultilizar o sol você precisa ter o lua para windows instalado.
 
-Você precisa ter o lua instalado. Baixe de https://github.com/rjpcomputing/luaforwindows/releases/tag/v5.1.5-52 estraia e cole na pasta lua, vá na pasta files e copie lua 5.1.exe e lua 5.1.dll. Cole na pasta lua e pronto. Por enquanto o transpilador que ainda não foi transformado em executavel só funciona para windows e está em desenvolvimento ativo
+1. Instale o lua para Windows de https://github.com/rjpcomputing/luaforwindows/releases/tag/v5.1.5-52 e selecione o source code.zip
+2. Extraia o arquivo
+3. Na pasta file copie o lua 5.1.exe e lua 5.1.dll
+4. Cole na pasta lua os dois arquivos
+
+E agora o sol pode executar scripts tanto no modo terminal tando no modo solscript
