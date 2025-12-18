@@ -1,14 +1,13 @@
 # Sol
 The Sol language
 
-# Português:
+Português:
 
-# Sol é uma linguagem de programação em desenvolvimento que transforma comandos de sol para lua e os executa.
+Sol é uma linguagem de programação em desenvolvimento que transforma comandos de sol para lua e os executa.
 
 # caracteristicas:
 
 * transforma comandos proprios em lua e os executa.
-* teve o desenvolvimeno iniciado 2 dias antes da criação do repositorio
 * usa a extenção de arquivo .solscript.
 * usa a linguagem lua para executar arquivos depois de traduzidos.
 
