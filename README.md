@@ -31,3 +31,8 @@ Para ultilizar o sol você precisa ter o lua para windows instalado.
 E agora o sol pode executar scripts em dois modos que são:
 * terminal
 * solscript
+
+
+# Observações:
+
+Os arquivos Python ainda não foram empacotados em exe.
