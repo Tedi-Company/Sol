@@ -1,0 +1,122 @@
+The Tedi Company Project
+
+Linguagem Sol
+
+Nome: Sol
+
+Baseada em: Lua
+
+Extenção de arquivo: .sol
+
+Descrição: Usa comandos proprios que são traduzidos para lua
+
+Funcionamento: transforma comandos de .sol para .lua numa pasta de cache do compilador
+
+Comandos:
+
+mostre    = mostra algo com um atributo (exemplo: mostre #txt.nomedotxt.texto#  )
+defina    = define algo a uma varialvel (exemplo: defina #txt.nomedotxt.texto = var.nomedavariavel#  )
+crie      = cria algo em uma extenção e com nome (exemplo: crie #txt.name.exemplo#  )
+abra*web*html  = abre uma pagina web html no navegador tedi que já é incluso no compilador (exemplo: abra.web.html #https://www.exemplo.com#  )
+abra*web  = abre e mostra um arquivo hopedado na internet direto na interface (exemplo: abra.web #https://www.exemplo.com/exemplo.txt#  )
+abra  = abre algo como diretorios e arquivos locais (exemplo: abra #/home#  )
+inclua = inclui algo ao codigo (exemplo: inclua #teste.txt#  )
+variavel*local = mostra variavel (exemplo: variavel*local = #nomedavariavel#  )
+edtite  = mostra todo o conteudo de um arquivo e deixa ele ser editado pelo terminal (exemplo: edite #txt.nomedotxt#   )
+
+
+Comandos traduzidos (exemplos):
+
+mostre  = lua: local arquivo = io.open("nomedotxt.txt", "r")
+
+if arquivo then
+    local conteudo = arquivo:read("*a")
+    arquivo:close()
+    print(conteudo)
+else
+    print("Erro ao abrir o arquivo")
+end
+
+sol: mostre #txt.nomedotxt.texto#
+
+defina = lua: local nome = "nome"
+local pontos = 150
+
+local arquivo = io.open("nome.txt", "w")
+
+if arquivo then
+    arquivo:write(nome .. "\n")
+    arquivo:write(pontos)
+    arquivo:close()
+    print("Variáveis salvas no TXT")
+else
+    print("Erro ao criar o arquivo")
+end
+
+sol: defina #txt.nomedotxt.texto = var.nomedavariavel#
+
+
+crie = lua: local arquivo = io.open("novo_arquivo.txt", "w")
+
+if arquivo then
+    arquivo:write("Arquivo criado com sucesso!\n")
+    arquivo:close()
+    print("Arquivo criado")
+else
+    print("Erro ao criar o arquivo")
+end
+
+sol: crie #txt.name.exemplo#
+
+abra*web*html = lua: -- entra na pasta do electron e inicia
+os.execute('cd electron_app && npx electron .')
+
+sol: abra.web.html #https://www.exemplo.com#
+
+
+
+abra*web = lua: local url = "https://example.com/arquivo.txt"
+local destino = "arquivo.txt"
+
+os.execute('curl -L "' .. url .. '" -o "' .. destino .. '"')
+
+print("TXT baixado com sucesso")
+
+
+sol: abra*web #https://www.exemplo.com/exemplo.txt#
+
+
+abra = lua: local caminho = "."
+
+local osname = package.config:sub(1,1)
+
+if osname == "\\" then
+    -- Windows
+    os.execute('explorer "' .. caminho .. '"')
+else
+    -- Linux / macOS
+    os.execute('xdg-open "' .. caminho .. '" || open "' .. caminho .. '"')
+end
+
+
+sol: abra #/home#
+
+
+inclua = lua: local config = {}
+
+for linha in io.lines("config.txt") do
+    local k, v = linha:match("(.+)=(.+)")
+    if k then
+        config[k] = v
+    end
+end
+
+print(config.porta)
+
+
+sol: inclua #teste.txt#
+
+
+variaveis*locais = lua: print("Valor:", nomedavariavel)
+
+sol: variavel*local = #nomedavariavel#
